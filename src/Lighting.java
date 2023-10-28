@@ -1,4 +1,4 @@
-public class Lights {
+public class Lighting {
     public void on() {
         System.out.println("Turning on lights...");
     }

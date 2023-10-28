@@ -1,32 +1,47 @@
 public class DomoticaFacade {
-    private Light light;
-    private Temperature temperature;
-    private Camera camera;
+    private Lighting lights;
+    private ClimateControl temperature;
+    private SecurityService cameras;
+    private MusicSystem stereo;
 
-    public DomoticaFacade(Light light, Temperature temperature, Camera camera) {
-        this.light = light;
-        this.temperature = temperature;
-        this.camera = camera;
+    public DomoticaFacade() {
+        this.lights = new Lighting();
+        this.temperature = new ClimateControl();
+        this.cameras = new SecurityService();
+        this.stereo = new MusicSystem();
     }
 
-    public void encenderLuces() {
-        light.on();
+    public void turnOnLigths() {
+        lights.on();
     }
 
-    public void apagarLuces() {
-        light.off();
+    public void turnOffLigths() {
+        lights.off();
     }
 
-    public void regularTemperatura() {
+    public void regulateTemperature() {
         temperature.increase();
         temperature.decrease();
     }
 
-    public void activarCamaras() {
-        camera.activate();
+    public void activateCamaras() {
+        cameras.activate();
     }
 
-    public void desactivarCamaras() {
-        camera.deactivate();
+    public void deactivateCamaras() {
+        cameras.deactivate();
+    }
+
+
+    public void goodMornigRoutine() {
+        turnOnLigths();
+        stereo.playMusic();
+        temperature.decrease();;
+    }
+
+    public void goodNightRoutine() {
+        turnOffLigths();
+        stereo.stopMusic();
+        temperature.increase();
     }
 }

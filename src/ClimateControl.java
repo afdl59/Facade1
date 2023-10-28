@@ -1,4 +1,4 @@
-public class Temperature {
+public class ClimateControl {
     public void increase() {
         System.out.println("Increasing temperature...");
     }

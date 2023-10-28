@@ -1,4 +1,4 @@
-public class Cameras {
+public class SecurityService {
     public void activate() {
         System.out.println("Activating cameras...");
     }
